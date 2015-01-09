@@ -46,6 +46,8 @@ data$weekday <- weekdays(realdate)
 ## Step 2 : drawing the plot                      ##
 ####################################################
 
+png(file = "plot3.png")
+
 graph.type = "l"
 graph.xlab <- ""
 graph.ylab <- "Energy sub metering"
@@ -60,8 +62,4 @@ with(data, {
 
 legend("topright", legend = graph.legend, lwd=1, col=c("black", "red", "blue"))
 
-
-####################################################
-## Step 3 : creating the pdf                      ##
-####################################################
-
+dev.off()

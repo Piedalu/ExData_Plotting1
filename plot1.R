@@ -38,14 +38,13 @@ data$Gap <- as.numeric(as.character(data$Global_active_power))
 ## Step 2 : drawing the plot                      ##
 ####################################################
 
+png(file = "plot1.png")
+
 graph.title <- "Global Active Power"
 graph.xlab <- "Global Active Power (kilowatts)"
 graph.color <- "red"
 
+
 with(data, hist(Gap, main = graph.title, xlab = graph.xlab, col = graph.color))
 
-
-####################################################
-## Step 3 : creating the pdf                      ##
-####################################################
-
+dev.off()

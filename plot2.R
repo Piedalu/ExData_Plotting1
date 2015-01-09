@@ -44,14 +44,12 @@ data$weekday <- weekdays(realdate)
 ## Step 2 : drawing the plot                      ##
 ####################################################
 
+png(file = "plot2.png")
+
 graph.type = "l"
 graph.xlab <- ""
 graph.ylab <- "Global Active Power (kilowatts)"
 
-with(data, plot(realdate,Gap, type = graph.type, main = graph.title, xlab = graph.xlab, ylab = graph.ylab))
+with(data, plot(realdate,Gap, type = graph.type, xlab = graph.xlab, ylab = graph.ylab))
 
-
-####################################################
-## Step 3 : creating the pdf                      ##
-####################################################
-
+dev.off()

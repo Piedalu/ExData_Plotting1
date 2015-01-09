@@ -49,13 +49,15 @@ data$weekday <- weekdays(realdate)
 ## Step 2 : drawing the plot                      ##
 ####################################################
 
+png(file = "plot4.png")
+
 par(mfrow = c(2,2))
 
 
 ## first graph
 graph1.type = "l"
 graph1.xlab <- ""
-graph1.ylab <- "Global Active Power (kilowatts)"
+graph1.ylab <- "Global Active Power"
 
 with(data, plot(realdate, Gap, type = graph1.type, xlab = graph1.xlab, ylab = graph1.ylab))
 
@@ -84,13 +86,10 @@ with(data, {
 
 
 ## fourth graph
-graph1.type = "l"
-graph1.xlab <- "datetime"
-graph1.ylab <- "Global_reactive_power"
+graph4.type = "l"
+graph4.xlab <- "datetime"
+graph4.ylab <- "Global_reactive_power"
 
-with(data, plot(realdate, Grp, type = graph1.type, xlab = graph1.xlab, ylab = graph1.ylab))
+with(data, plot(realdate, Grp, type = graph4.type, xlab = graph4.xlab, ylab = graph4.ylab))
 
-####################################################
-## Step 3 : creating the pdf                      ##
-####################################################
-
+dev.off()
